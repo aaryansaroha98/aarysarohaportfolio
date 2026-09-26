@@ -4,344 +4,235 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aaryan Saroha — Founder, Quantify Terminal</title>
-<meta name="description" content="Aaryan Saroha — Founder & CEO of Quantify Terminal. Quantitative finance, market microstructure and financial infrastructure. Electrical Engineering, IIT Jammu.">
-<meta name="theme-color" content="#060606">
+<meta name="description" content="Aaryan Saroha is the founder and CEO of Quantify Terminal, building financial intelligence infrastructure from Jammu, India.">
+<meta name="theme-color" content="#f3f1ec">
 <meta property="og:title" content="Aaryan Saroha — Founder, Quantify Terminal">
 <meta property="og:description" content="Building the system that maintains conviction, not just information.">
 <meta property="og:image" content="assets/qt-geo.webp">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23060606'/><text x='5' y='23' font-family='monospace' font-weight='700' font-size='18' fill='%23ff8a1f'>A_</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%230e0e0e'/><text x='16' y='21.5' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='17' fill='%23f3f1ec'>a</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
-<!-- ========== BOOT ========== -->
-<div class="boot" id="boot" aria-hidden="true">
-  <pre class="boot__log" id="bootLog"></pre>
-  <div class="boot__bottom">
-    <span class="boot__label">QUANTIFY/OS · FOUNDER PROFILE</span>
-    <span class="boot__count" id="bootCount">000</span>
-  </div>
-  <div class="boot__bar"><i id="bootBar"></i></div>
+<!-- intro curtain -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__name"><span>Aaryan</span> <em>Saroha</em></div>
+  <div class="intro__count" id="introCount">0</div>
 </div>
 
-<!-- ========== CURSOR ========== -->
-<div class="xh" aria-hidden="true">
-  <div class="xh__v"></div><div class="xh__h"></div>
-  <div class="xh__dot"></div>
-  <div class="xh__tag" id="xhTag">X 0000 · Y 0000</div>
-</div>
+<!-- cursor -->
+<div class="cursor" id="cursor" aria-hidden="true"><span>View</span></div>
 
-<!-- ========== STATUS BAR / NAV ========== -->
-<header class="bar" id="bar">
-  <div class="bar__row">
-    <a href="#index" class="bar__brand"><b>AARYAN SAROHA</b><span class="pill"><i class="blink"></i>LIVE</span></a>
-    <button class="bar__cmd" id="cmdOpen" type="button" aria-label="Open command palette">
-      <span class="caret">&gt;</span> Type command, section, or HELP <kbd>/</kbd>
-    </button>
-    <div class="bar__meta">
-      <span>JAMMU <b id="clock">--:--:--</b> IST</span>
-      <span class="hide-sm">STATUS: <b class="amber">BUILDING</b></span>
-    </div>
-  </div>
-  <nav class="bar__keys" aria-label="Sections">
-    <a href="#index" data-k="1"><em>F1</em> INDEX</a>
-    <a href="#quantify" data-k="2"><em>F2</em> QUANTIFY</a>
-    <a href="#founder" data-k="3"><em>F3</em> FOUNDER</a>
-    <a href="#beliefs" data-k="4"><em>F4</em> BELIEFS</a>
-    <a href="#work" data-k="5"><em>F5</em> BUILT</a>
-    <a href="#ledger" data-k="6"><em>F6</em> JOURNEY</a>
-    <a href="#contact" data-k="7"><em>F7</em> CONNECT</a>
+<!-- nav -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo">Aaryan Saroha</a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#quantify">Quantify</a>
+    <a href="#beliefs">Beliefs</a>
+    <a href="#work">Work</a>
   </nav>
-  <div class="tape" aria-hidden="true"><div class="tape__track" id="tape"></div></div>
+  <a href="#contact" class="nav__cta magnetic"><span>Get in touch</span></a>
 </header>
 
-<main>
+<main id="top">
 
-<!-- ========== HERO ========== -->
-<section class="hero" id="index">
-  <canvas id="market" class="hero__canvas" aria-hidden="true"></canvas>
-  <div class="hero__grid" aria-hidden="true"></div>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero__glow" id="glow" aria-hidden="true"></div>
 
-  <div class="hero__top">
-    <span class="tag">[ 32.73°N · 74.86°E ]</span>
-    <span class="tag">EST. JAMMU, INDIA</span>
-    <span class="tag hide-sm">FOUNDER · QUANTIFY TERMINAL</span>
-  </div>
+  <p class="hero__eyebrow fade"><span class="dot"></span>Founder &amp; CEO, Quantify Terminal</p>
 
-  <h1 class="hero__name" aria-label="Aaryan Saroha">
-    <span class="line"><span class="split">AARYAN</span></span>
-    <span class="line line--r"><em class="serif">the</em><span class="split">SAROHA</span></span>
+  <h1 class="hero__title" aria-label="Aaryan Saroha">
+    <span class="row"><span class="chars">Aaryan</span></span>
+    <span class="row row--2"><em class="chars">Saroha</em></span>
   </h1>
 
-  <div class="hero__foot">
-    <p class="hero__lede reveal">
-      Founder &amp; CEO of <a href="https://www.quantifyterminal.com" target="_blank" rel="noopener" class="u">Quantify&nbsp;Terminal</a>.
-      I build financial infrastructure — the kind that tells investors not just <i>what happened</i>, but <i>what changed because it happened.</i>
-    </p>
-    <dl class="hero__stats reveal">
-      <div><dt>ROLE</dt><dd>Founder &amp; CEO</dd></div>
-      <div><dt>BUILDING</dt><dd>Quantify Terminal</dd></div>
-      <div><dt>HQ</dt><dd>Jammu, India</dd></div>
-      <div><dt>STATUS</dt><dd class="up">▲ Shipping</dd></div>
-    </dl>
+  <div class="hero__bottom">
+    <p class="hero__lede fade">I'm building the financial intelligence infrastructure that tells investors <em>what changed</em> — not just what happened.</p>
+    <figure class="hero__portrait" id="heroPortrait">
+      <img src="assets/aaryan.webp" alt="Aaryan Saroha" width="900" height="931">
+    </figure>
+    <div class="hero__meta fade">
+      <span>Based in</span>
+      <strong>Jammu, India</strong>
+      <span class="hero__time" id="clock">—</span>
+    </div>
   </div>
 
-  <a href="#manifesto" class="hero__scroll" aria-label="Scroll">
-    <span>SCROLL</span><i></i>
-  </a>
+  <a href="#statement" class="hero__scroll fade" aria-label="Scroll down"><span></span></a>
 </section>
 
-<!-- ========== MANIFESTO ========== -->
-<section class="manifesto" id="manifesto">
-  <p class="kicker">// THESIS 001</p>
-  <p class="manifesto__text" id="scrub">
-    Terminals tell investors what happened, then leave the consequences to spreadsheets, notes and memory. I'm building the one that <span class="hl">carries the consequences</span> — from the filing, to the model, to the thesis, to the portfolio, to the <span class="hl">decision.</span>
-  </p>
+<!-- ================= STATEMENT ================= -->
+<section class="statement" id="statement">
+  <p class="label">The idea</p>
+  <p class="statement__text" id="scrub">Terminals tell investors what happened, then leave the consequences to spreadsheets, notes and memory. I'm building the one that carries those consequences — from the filing, to the model, to the thesis, to the portfolio, to the <em>decision.</em></p>
 </section>
 
-<!-- ========== QUANTIFY ========== -->
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="about__grid">
+    <div class="about__side">
+      <p class="label">About</p>
+      <figure class="about__img reveal-img">
+        <img src="assets/aaryan.webp" alt="Portrait of Aaryan Saroha" width="900" height="931" loading="lazy">
+      </figure>
+    </div>
+    <div class="about__copy">
+      <h2 class="h-lg fade">Electrical engineer by training. <em>Quant by obsession.</em> Founder by choice.</h2>
+      <p class="fade">I'm Aaryan — founder and CEO of Quantify Terminal. I work where quantitative finance meets engineering: pricing and valuation, factor and risk models, market microstructure, and the data infrastructure it takes to run them at production scale.</p>
+      <p class="fade">I lead architecture and product myself, from raw ingestion to what lands on the desk. The goal was never more tabs. It's a system that knows what you believe, notices the moment the world breaks it, and shows its working.</p>
+      <p class="fade">I'm building it as long-term financial infrastructure — from Jammu, for every desk that takes its decisions seriously.</p>
+      <div class="about__focus fade">
+        <span>Quantitative research</span><span>Risk &amp; portfolio analytics</span><span>Market microstructure</span><span>Algorithmic execution</span><span>Market data infrastructure</span><span>Decision infrastructure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUANTIFY ================= -->
 <section class="qt" id="quantify">
-  <div class="sec-head">
-    <span class="sec-head__n">F2</span>
-    <h2>Quantify <em class="serif">Terminal</em></h2>
-    <p>Financial intelligence infrastructure. A native desktop terminal for macOS, Windows and Linux — live markets, research, portfolios, risk, derivatives, funds, macro and geopolitics, on one event-to-decision system.</p>
+  <div class="qt__intro">
+    <p class="label label--light">The company</p>
+    <h2 class="qt__title fade">Quantify <em>Terminal</em></h2>
+    <p class="qt__sub fade">Financial intelligence infrastructure. One desktop terminal for live markets, research, portfolios, risk, derivatives, funds, macro and geopolitics — built on a single event-to-decision system.</p>
   </div>
 
-  <!-- Pinned pipeline -->
-  <div class="pipe" id="pipe">
-    <div class="pipe__sticky">
-      <div class="pipe__left">
-        <p class="kicker">EVENT → DECISION · <span id="pipeStep">01/06</span></p>
-        <h3 class="pipe__title" id="pipeTitle">A filing lands.</h3>
-        <p class="pipe__desc" id="pipeDesc">It enters the Data Fabric with a canonical identifier and point-in-time timestamps.</p>
-        <div class="pipe__log" id="pipeLog" aria-live="off"></div>
-      </div>
-      <div class="pipe__right">
-        <svg class="pipe__svg" viewBox="0 0 400 640" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <path id="pipePath" d="M200 20 C 200 100, 90 110, 90 190 S 310 280, 310 350 S 90 430, 90 500 S 200 580, 200 620" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="4 6"/>
-          <path id="pipeLit" d="M200 20 C 200 100, 90 110, 90 190 S 310 280, 310 350 S 90 430, 90 500 S 200 580, 200 620" fill="none" stroke="var(--amber)" stroke-width="2"/>
-          <circle id="pipeDot" r="7" fill="var(--amber)"/>
-          <circle id="pipeHalo" r="18" fill="none" stroke="var(--amber)" stroke-opacity=".5"/>
-        </svg>
-        <ol class="pipe__nodes" id="pipeNodes">
-          <li style="--x:50%;--y:3%"><b>P0</b>Data Fabric</li>
-          <li style="--x:22.5%;--y:29.7%"><b>P1</b>Model Compiler</li>
-          <li style="--x:77.5%;--y:54.7%"><b>P2</b>Thesis Graph</li>
-          <li style="--x:22.5%;--y:78%"><b>P3</b>Portfolio Twin</li>
-          <li style="--x:50%;--y:97%"><b>P4</b>Decision Ledger</li>
-        </ol>
-      </div>
+  <div class="qt__stage" id="stage">
+    <div class="qt__stage-sticky">
+      <figure class="qt__shot" id="shot">
+        <img src="assets/qt-geo.webp" alt="Quantify Terminal — Global Intelligence Map" width="1400" height="808" loading="lazy">
+      </figure>
     </div>
   </div>
 
-  <!-- Screens -->
-  <div class="screens">
-    <figure class="screen screen--main tilt">
-      <img src="assets/qt-geo.webp" alt="Quantify Terminal — Global Intelligence Map" loading="lazy" width="1400" height="808">
-      <figcaption><span>F17</span> GEO INTELLIGENCE</figcaption>
-    </figure>
-    <figure class="screen tilt">
-      <img src="assets/qt-charts.webp" alt="Quantify Terminal — multi-chart layout" loading="lazy" width="1400" height="808">
-      <figcaption><span>F4</span> CHARTS</figcaption>
-    </figure>
-    <figure class="screen tilt">
-      <img src="assets/qt-research.webp" alt="Quantify Terminal — equity research" loading="lazy" width="1400" height="808">
-      <figcaption><span>F13</span> EQUITY RESEARCH</figcaption>
-    </figure>
-    <figure class="screen tilt">
-      <img src="assets/qt-options.webp" alt="Quantify Terminal — options greeks and implied volatility" loading="lazy" width="1400" height="812">
-      <figcaption><span>OPT</span> GREEKS · IV</figcaption>
-    </figure>
-  </div>
-
-  <!-- Principles + constitution -->
-  <div class="rules">
-    <div class="rules__code reveal">
-      <div class="win"><i></i><i></i><i></i><span>investment_constitution.q</span></div>
-      <pre id="constitution"><code></code></pre>
+  <div class="flow">
+    <div class="flow__head">
+      <p class="label label--light">How it works</p>
+      <h3 class="h-md fade">From a headline to a <em>decision</em>, automatically.</h3>
+      <p class="flow__note fade">Every terminal stops at what happened. Quantify keeps going.</p>
     </div>
-    <ul class="rules__list">
-      <li class="reveal"><span>01</span><h4>Deterministic finance</h4><p>Language models plan, interpret and explain. DCF, WACC, factor and risk maths run in versioned code — never in prose.</p></li>
-      <li class="reveal"><span>02</span><h4>Point-in-time by default</h4><p>Every observation carries effective, available and ingested timestamps. Backtests use what was knowable then.</p></li>
-      <li class="reveal"><span>03</span><h4>No magic scores</h4><p>A number without its breakdown does not ship. Components, inputs, uncertainty and evidence — always exposed.</p></li>
-      <li class="reveal"><span>04</span><h4>Human gates on capital</h4><p>Hard confirmation, broker controls, a kill switch. Nothing trades by accident.</p></li>
-    </ul>
+    <ol class="flow__steps">
+      <li class="step"><span class="step__n">01</span><div><h4>A filing lands</h4><p>It enters the Data Fabric with a canonical identifier, point-in-time timestamps and machine-readable data rights.</p></div></li>
+      <li class="step"><span class="step__n">02</span><div><h4>The model updates</h4><p>Figures become facts carrying the sentence they were read from. The Model Compiler proposes the exact cells that change.</p></div></li>
+      <li class="step"><span class="step__n">03</span><div><h4>The thesis re-scores</h4><p>Every assumption the change touches is re-scored — with its inputs, uncertainty and evidence in plain view.</p></div></li>
+      <li class="step"><span class="step__n">04</span><div><h4>Exposure is recomputed</h4><p>The Portfolio Digital Twin traces first-, second- and third-order exposure through suppliers, customers and geographies.</p></div></li>
+      <li class="step"><span class="step__n">05</span><div><h4>The decision is recorded</h4><p>Tested against the mandate, approved by a person, written to the Decision Ledger — and replayable forever.</p></div></li>
+    </ol>
   </div>
 
-  <a class="bigcta magnetic" href="https://www.quantifyterminal.com" target="_blank" rel="noopener">
-    <span class="bigcta__txt">quantifyterminal.com</span>
-    <span class="bigcta__arrow">↗</span>
+  <div class="qt__gallery">
+    <figure class="reveal-img"><img src="assets/qt-charts.webp" alt="Quantify Terminal — charts" width="1400" height="808" loading="lazy"></figure>
+    <figure class="reveal-img"><img src="assets/qt-research.webp" alt="Quantify Terminal — equity research" width="1400" height="808" loading="lazy"></figure>
+    <figure class="reveal-img"><img src="assets/qt-options.webp" alt="Quantify Terminal — options analytics" width="1400" height="812" loading="lazy"></figure>
+  </div>
+
+  <a class="qt__link" href="https://www.quantifyterminal.com" target="_blank" rel="noopener">
+    <span>Visit quantifyterminal.com</span>
+    <i aria-hidden="true">→</i>
   </a>
 </section>
 
-<!-- ========== FOUNDER ========== -->
-<section class="founder" id="founder">
-  <div class="sec-head">
-    <span class="sec-head__n">F3</span>
-    <h2>The <em class="serif">founder</em></h2>
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Maintain conviction</span><i>✦</i><em>not just information</em><i>✦</i><span>Maintain conviction</span><i>✦</i><em>not just information</em><i>✦</i>
+    <span>Maintain conviction</span><i>✦</i><em>not just information</em><i>✦</i><span>Maintain conviction</span><i>✦</i><em>not just information</em><i>✦</i>
   </div>
+</div>
 
-  <div class="founder__grid">
-    <figure class="portrait" id="portrait">
-      <img src="assets/aaryan.webp" alt="Portrait of Aaryan Saroha" width="900" height="931" loading="lazy">
-      <canvas class="portrait__fx" id="portraitFx" aria-hidden="true"></canvas>
-      <figcaption>
-        <span>SUBJECT: A. SAROHA</span>
-        <span class="amber">● ON DESK</span>
-      </figcaption>
-    </figure>
-
-    <div class="founder__copy">
-      <p class="founder__big reveal">Electrical engineer by training. <em class="serif">Quant by obsession.</em> Builder by default.</p>
-      <p class="reveal">I'm Aaryan — founder and CEO of Quantify Terminal. I work where quantitative finance meets engineering: pricing and valuation, factor and risk models, market microstructure, and the data infrastructure it takes to run them at production scale.</p>
-      <p class="reveal">I lead architecture and product myself, from raw ingestion to what lands on the desk. The goal was never more tabs. It's a terminal that knows what you believe, notices the moment the world breaks it, and shows its working.</p>
-      <p class="reveal">I'm building it as long-term financial infrastructure — from Jammu, for every desk that takes its decisions seriously.</p>
-      <div class="founder__links reveal">
-        <a href="https://calendar.app.google/xxkz8n8ozpzJnkQp9" target="_blank" rel="noopener" class="btn">Book a call ↗</a>
-        <a href="https://x.com/aaryan_sar60649" target="_blank" rel="noopener" class="btn btn--ghost">X ↗</a>
-        <a href="https://www.linkedin.com/in/aaryan-saroha-4301a3378/" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn ↗</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="marquee" aria-label="Focus areas">
-    <div class="marquee__track">
-      <span>Quantitative Research</span><i>✳</i><span class="serif">Risk &amp; Portfolio Analytics</span><i>✳</i><span>Market Microstructure</span><i>✳</i><span class="serif">Algorithmic Execution</span><i>✳</i><span>Market Data Infrastructure</span><i>✳</i><span class="serif">Autonomous Research Systems</span><i>✳</i><span>Decision Infrastructure</span><i>✳</i>
-      <span aria-hidden="true">Quantitative Research</span><i>✳</i><span class="serif" aria-hidden="true">Risk &amp; Portfolio Analytics</span><i>✳</i><span aria-hidden="true">Market Microstructure</span><i>✳</i><span class="serif" aria-hidden="true">Algorithmic Execution</span><i>✳</i><span aria-hidden="true">Market Data Infrastructure</span><i>✳</i><span class="serif" aria-hidden="true">Autonomous Research Systems</span><i>✳</i><span aria-hidden="true">Decision Infrastructure</span><i>✳</i>
-    </div>
-  </div>
-</section>
-
-<!-- ========== BELIEFS ========== -->
+<!-- ================= BELIEFS ================= -->
 <section class="beliefs" id="beliefs">
-  <div class="sec-head">
-    <span class="sec-head__n">F4</span>
-    <h2>What I <em class="serif">believe</em></h2>
-    <p>The operating system behind the company. Hover to stress-test.</p>
+  <div class="sec-top">
+    <p class="label">What I believe</p>
+    <p class="sec-top__note fade">The principles the company is built on.</p>
   </div>
   <ol class="bl">
-    <li class="reveal"><span class="bl__n">01</span><div><h3>Information is a commodity. <em class="serif">Conviction isn't.</em></h3><p>Every terminal tells you what happened. The edge is knowing what it changes — in your model, your thesis, your book.</p></div></li>
-    <li class="reveal"><span class="bl__n">02</span><div><h3>Speed of reasoning <em class="serif">beats number of tabs.</em></h3><p>The win isn't more screens. It's memory, reproducibility, and knowing your portfolio impact in minutes instead of afternoons.</p></div></li>
-    <li class="reveal"><span class="bl__n">03</span><div><h3>Evidence, <em class="serif">or nothing.</em></h3><p>Every claim cites the line it came from. If it can't show its source, it doesn't ship.</p></div></li>
-    <li class="reveal"><span class="bl__n">04</span><div><h3>Institutional tools <em class="serif">shouldn't need an institution.</em></h3><p>Fast, transparent, rigorous infrastructure — without economics that lock it behind the biggest firms.</p></div></li>
-    <li class="reveal"><span class="bl__n">05</span><div><h3>Foundations first. <em class="serif">Features later.</em></h3><p>Every stage has an exit criterion. Nothing gets built on a layer that hasn't passed its own.</p></div></li>
-    <li class="reveal"><span class="bl__n">06</span><div><h3>Build it for <em class="serif">the long run.</em></h3><p>Not a feature. Not a wrapper. Infrastructure that should still be running decades from now.</p></div></li>
+    <li class="fade"><span>01</span><div><h3>Information is a commodity. <em>Conviction isn't.</em></h3><p>Every terminal tells you what happened. The edge is knowing what it changes — in your model, your thesis, your book.</p></div></li>
+    <li class="fade"><span>02</span><div><h3>Speed of reasoning <em>beats number of tabs.</em></h3><p>The win isn't more screens. It's memory, reproducibility, and knowing your portfolio impact in minutes instead of afternoons.</p></div></li>
+    <li class="fade"><span>03</span><div><h3>Evidence, <em>or nothing.</em></h3><p>Every claim cites the line it came from. If it can't show its source, it doesn't ship.</p></div></li>
+    <li class="fade"><span>04</span><div><h3>Institutional tools <em>shouldn't need an institution.</em></h3><p>Fast, transparent, rigorous infrastructure — without economics that lock it behind the biggest firms.</p></div></li>
+    <li class="fade"><span>05</span><div><h3>Foundations first. <em>Features later.</em></h3><p>Every stage has an exit criterion. Nothing gets built on a layer that hasn't passed its own.</p></div></li>
+    <li class="fade"><span>06</span><div><h3>Build it for <em>the long run.</em></h3><p>Not a feature. Not a wrapper. Infrastructure that should still be running decades from now.</p></div></li>
   </ol>
 </section>
 
-<!-- ========== WATCHLIST / WORK ========== -->
+<!-- ================= WORK ================= -->
 <section class="work" id="work">
-  <div class="sec-head">
-    <span class="sec-head__n">F5</span>
-    <h2>Things I've <em class="serif">built</em></h2>
-    <p>Quoted like positions. One flagship, a few that got me here. Hover a row for the chart.</p>
+  <div class="sec-top">
+    <p class="label">Selected work</p>
+    <p class="sec-top__note fade">One company. A few products that got me here.</p>
   </div>
 
-  <div class="wl" role="table" aria-label="Projects">
-    <div class="wl__head" role="row">
-      <span role="columnheader">SYM</span><span role="columnheader">NAME</span><span role="columnheader" class="hide-sm">ROLE</span><span role="columnheader" class="hide-sm">LISTED</span><span role="columnheader">CHG</span>
-    </div>
-
-    <a class="wl__row" role="row" href="https://www.quantifyterminal.com" target="_blank" rel="noopener" data-img="assets/qt-charts.webp">
-      <span class="sym">QTML</span>
-      <span class="nm"><b>Quantify Terminal</b><small>Financial intelligence infrastructure — event-to-decision desktop terminal.</small></span>
-      <span class="st hide-sm">Founder &amp; CEO</span>
-      <span class="yr hide-sm">2026</span>
-      <span class="chg up">▲ FLAGSHIP</span>
+  <div class="work__grid">
+    <a class="card card--xl fade" href="https://www.quantifyterminal.com" target="_blank" rel="noopener" data-cursor>
+      <figure class="card__img"><img src="assets/qt-charts.webp" alt="" width="1400" height="808" loading="lazy"></figure>
+      <div class="card__meta"><h3>Quantify Terminal</h3><span>Founder &amp; CEO · Now</span></div>
+      <p class="card__desc">Financial intelligence infrastructure for analysts, funds and portfolio managers.</p>
     </a>
-    <a class="wl__row" role="row" href="https://hembit.in" target="_blank" rel="noopener" data-img="assets/hembit.webp">
-      <span class="sym">HMBT</span>
-      <span class="nm"><b>hembit.in</b><small>Full-stack e-commerce — catalog, cart, payments, live in production.</small></span>
-      <span class="st hide-sm">Built end to end</span>
-      <span class="yr hide-sm">NOV 2025</span>
-      <span class="chg up">▲ LIVE</span>
+    <a class="card fade" href="https://hembit.in" target="_blank" rel="noopener" data-cursor>
+      <figure class="card__img"><img src="assets/hembit.webp" alt="" width="1400" height="712" loading="lazy"></figure>
+      <div class="card__meta"><h3>hembit.in</h3><span>2025</span></div>
+      <p class="card__desc">A full e-commerce business, built end to end.</p>
     </a>
-    <a class="wl__row" role="row" href="https://chalchitraseries.iitjammu.ac.in" target="_blank" rel="noopener" data-img="assets/chalchitra.webp">
-      <span class="sym">CHLC</span>
-      <span class="nm"><b>Chalchitra Series</b><small>Ticketing for IIT Jammu's film society. Real students, real seats.</small></span>
-      <span class="st hide-sm">Runs the backend</span>
-      <span class="yr hide-sm">JAN 2026</span>
-      <span class="chg up">▲ LIVE</span>
+    <a class="card fade" href="https://chalchitraseries.iitjammu.ac.in" target="_blank" rel="noopener" data-cursor>
+      <figure class="card__img"><img src="assets/chalchitra.webp" alt="" width="1400" height="838" loading="lazy"></figure>
+      <div class="card__meta"><h3>Chalchitra</h3><span>2026</span></div>
+      <p class="card__desc">Ticketing for IIT Jammu's film society. Real students, real seats.</p>
     </a>
-    <a class="wl__row" role="row" href="https://aaryansaroha98.github.io/prepaxis/" target="_blank" rel="noopener" data-img="assets/prepaxis.webp">
-      <span class="sym">PRPX</span>
-      <span class="nm"><b>PrepAxis</b><small>Interactive learning platform for skill development.</small></span>
-      <span class="st hide-sm">Built</span>
-      <span class="yr hide-sm">2025</span>
-      <span class="chg up">▲ LIVE</span>
+    <a class="card fade" href="https://aaryansaroha98.github.io/prepaxis/" target="_blank" rel="noopener" data-cursor>
+      <figure class="card__img"><img src="assets/prepaxis.webp" alt="" width="1400" height="773" loading="lazy"></figure>
+      <div class="card__meta"><h3>PrepAxis</h3><span>2025</span></div>
+      <p class="card__desc">An interactive platform for learning and skill development.</p>
     </a>
   </div>
-  <div class="wl__peek" id="peek" aria-hidden="true"><img alt=""></div>
 </section>
 
-<!-- ========== LEDGER ========== -->
-<section class="ledger" id="ledger">
-  <div class="sec-head">
-    <span class="sec-head__n">F6</span>
-    <h2>The <em class="serif">journey</em></h2>
-    <p>Logged like the Decision Ledger — every move recorded, newest first.</p>
+<!-- ================= JOURNEY ================= -->
+<section class="journey">
+  <div class="sec-top">
+    <p class="label">Journey</p>
+    <p class="sec-top__note fade">So far.</p>
   </div>
-  <ol class="lg">
-    <li class="reveal"><time>NOW</time><span class="lg__act up">BUILD</span><div><h4>Quantify Terminal</h4><p>Founder &amp; CEO. Early access is open to a small number of analysts and funds.</p></div></li>
-    <li class="reveal"><time>JAN 2026</time><span class="lg__act up">SHIP</span><div><h4>Chalchitra goes live</h4><p>Ticketing for IIT Jammu's film society. I run the backend.</p></div></li>
-    <li class="reveal"><time>NOV 2025</time><span class="lg__act up">SHIP</span><div><h4>hembit.in hits production</h4><p>A full e-commerce business, built end to end.</p></div></li>
-    <li class="reveal"><time>2025</time><span class="lg__act">MOVE</span><div><h4>Jammu</h4><p>Electrical engineering at IIT Jammu — and the base Quantify is built from.</p></div></li>
-    <li class="reveal"><time>2022</time><span class="lg__act">INIT</span><div><h4>First line of code</h4><p>Started building for the web. Haven't stopped since.</p></div></li>
+  <ol class="tl" id="tl">
+    <li class="fade"><time>2022</time><h4>First line of code</h4><p>Started building for the web. Haven't stopped since.</p></li>
+    <li class="fade"><time>2025</time><h4>Jammu</h4><p>Electrical engineering at IIT Jammu — and the base Quantify is built from.</p></li>
+    <li class="fade"><time>Nov 2025</time><h4>hembit.in ships</h4><p>A full e-commerce business, live in production.</p></li>
+    <li class="fade"><time>Jan 2026</time><h4>Chalchitra goes live</h4><p>Ticketing for the campus film society. I run the backend.</p></li>
+    <li class="fade tl__now"><time>Now</time><h4>Quantify Terminal</h4><p>Early access is open to a small number of analysts and funds.</p></li>
   </ol>
 </section>
 
-<!-- ========== CONTACT ========== -->
+<!-- ================= CONTACT ================= -->
 <section class="contact" id="contact">
-  <p class="kicker">// F7 · A DIRECT LINE</p>
-  <h2 class="contact__big">
-    <span class="line"><span class="split">Let's</span> <em class="serif">build</em></span>
-    <span class="line"><span class="split">something</span></span>
-    <span class="line"><span class="split">that</span> <em class="serif amber">compounds.</em></span>
+  <p class="label label--light">Contact</p>
+  <h2 class="contact__title" aria-label="Let's build something real.">
+    <span class="row"><span class="chars">Let's build</span></span>
+    <span class="row"><em class="chars">something real.</em></span>
   </h2>
+  <p class="contact__sub fade">Evaluations, licensing, data, partnerships — or just a good conversation. It comes straight to me.</p>
 
-  <div class="contact__grid">
-    <form class="term" id="term" autocomplete="off">
-      <div class="win"><i></i><i></i><i></i><span>aaryan@quantify ~ write</span></div>
-      <label><span>&gt; name</span><input name="name" required placeholder="your name"></label>
-      <label><span>&gt; email</span><input name="email" type="email" required placeholder="you@fund.com"></label>
-      <label><span>&gt; msg</span><textarea name="msg" rows="4" required placeholder="evaluations, licensing, data, or just hello"></textarea></label>
-      <button type="submit" class="btn">SEND ⏎</button>
-      <p class="term__out" id="termOut" role="status"></p>
-    </form>
-
-    <ul class="links">
-      <li><a href="mailto:contact@quantifyterminal.com"><span>MAIL · QUANTIFY</span><b>contact@quantifyterminal.com</b><i>↗</i></a></li>
-      <li><a href="mailto:aaryansaroha12@gmail.com"><span>MAIL · PERSONAL</span><b>aaryansaroha12@gmail.com</b><i>↗</i></a></li>
-      <li><a href="https://calendar.app.google/xxkz8n8ozpzJnkQp9" target="_blank" rel="noopener"><span>BOOK</span><b>A call with Aaryan</b><i>↗</i></a></li>
-      <li><a href="https://x.com/aaryan_sar60649" target="_blank" rel="noopener"><span>X</span><b>@aaryan_sar60649</b><i>↗</i></a></li>
-      <li><a href="https://www.linkedin.com/in/aaryan-saroha-4301a3378/" target="_blank" rel="noopener"><span>LINKEDIN</span><b>aaryan-saroha</b><i>↗</i></a></li>
-      <li><a href="https://github.com/aaryansaroha98" target="_blank" rel="noopener"><span>GITHUB</span><b>aaryansaroha98</b><i>↗</i></a></li>
-    </ul>
+  <div class="contact__actions fade">
+    <a href="mailto:contact@quantifyterminal.com" class="btn btn--light magnetic"><span>contact@quantifyterminal.com</span></a>
+    <a href="https://calendar.app.google/xxkz8n8ozpzJnkQp9" target="_blank" rel="noopener" class="btn btn--ghost magnetic"><span>Book a call ↗</span></a>
   </div>
+
+  <footer class="foot">
+    <div class="foot__links">
+      <a href="https://x.com/aaryan_sar60649" target="_blank" rel="noopener">X</a>
+      <a href="https://www.linkedin.com/in/aaryan-saroha-4301a3378/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aaryansaroha98" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:aaryansaroha12@gmail.com">Personal email</a>
+    </div>
+    <p>© 2026 Aaryan Saroha · Jammu, India</p>
+  </footer>
 </section>
 
 </main>
-
-<footer class="foot">
-  <div class="foot__word" aria-hidden="true">SAROHA</div>
-  <div class="foot__row">
-    <span>© 2026 Aaryan Saroha</span>
-    <span class="hide-sm">Press <kbd>/</kbd> for commands · <kbd>1</kbd>–<kbd>7</kbd> to jump</span>
-    <a href="#index">Back to top ↑</a>
-  </div>
-</footer>
-
-<!-- ========== COMMAND PALETTE ========== -->
-<div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
-  <div class="cmd__box">
-    <div class="cmd__in"><span class="caret">&gt;</span><input id="cmdInput" placeholder="type a command…" spellcheck="false" autocomplete="off"><kbd>ESC</kbd></div>
-    <ul class="cmd__list" id="cmdList"></ul>
-  </div>
-</div>
 
 <script src="js/main.js"></script>
 </body>
