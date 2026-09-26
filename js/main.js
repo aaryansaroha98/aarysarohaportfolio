@@ -72,12 +72,12 @@
     const lines = [
       ['QUANTIFY/OS v2026.09 — founder profile loader', 'am'],
       ['mount /desk/aaryan-saroha ........................', 'ok', 'OK'],
-      ['resolve canonical id: A.SAROHA@IITJ-EE-2025 ......', 'ok', 'OK'],
+      ['resolve canonical id: A.SAROHA / FOUNDER .........', 'ok', 'OK'],
       ['load data fabric (point-in-time) .................', 'ok', 'OK'],
       ['compile models :: pricing, factor, risk ..........', 'ok', 'OK'],
       ['attach thesis graph :: "maintain conviction" .....', 'ok', 'OK'],
       ['portfolio twin :: exposure recomputed ............', 'ok', 'OK'],
-      ['decision ledger :: 8 entries, replayable .........', 'ok', 'OK'],
+      ['decision ledger :: every move, replayable ........', 'ok', 'OK'],
       ['stream market feed .............................. ', 'am', 'LIVE'],
       ['> welcome.', 'am']
     ];
@@ -110,9 +110,9 @@
   /* ---------- ticker tape ---------- */
   const tape = $('#tape');
   const tickers = [
-    ['QTML', 1284.5], ['CONVICTION', 999.99], ['HMBT', 412.2], ['CHLC', 218.7], ['PRPX', 96.4],
-    ['IITJ·EE', 2029], ['C++', 311.8], ['PYTHON', 540.1], ['REACT', 188.6], ['NODE', 142.3],
-    ['SQL', 204.9], ['PYTORCH', 77.3], ['SHIP_VELOCITY', 88.8], ['SLEEP', 4.2], ['COFFEE', 31.4], ['NEXUS26', 26.0]
+    ['QTML', 1284.5], ['CONVICTION', 999.99], ['EARLY_ACCESS', 312.4], ['SHIP_VELOCITY', 88.8], ['HMBT', 412.2],
+    ['CHLC', 218.7], ['DECISIONS', 640.2], ['DATA_FABRIC', 205.6], ['FOCUS', 97.1], ['CHAI', 31.4],
+    ['SLEEP', 4.2], ['AMBITION', 1000.0], ['THESIS_HEALTH', 71.0], ['JAMMU_HQ', 32.73]
   ];
   const chg = () => {
     const c = rand(-1.2, 4.2);
@@ -137,7 +137,7 @@
   }, { passive: true });
   document.addEventListener('pointerleave', () => document.documentElement.classList.remove('has-cursor'));
   document.addEventListener('pointerover', e => {
-    xh.classList.toggle('is-hover', !!e.target.closest('a, button, .tilt, .heat__t, input, textarea, .cmd__list li'));
+    xh.classList.toggle('is-hover', !!e.target.closest('a, button, .tilt, .bl li, input, textarea, .cmd__list li'));
   });
 
   /* ---------- hero market canvas ---------- */
@@ -385,58 +385,11 @@
     requestAnimationFrame(follow);
   })();
 
-  /* ---------- skill heatmap ---------- */
-  const skills = [
-    ['Quant Finance', 'Pricing · Factors · Risk', 4, 2, 9.4],
-    ['C / C++', 'Systems · DSA', 4, 2, 7.8],
-    ['Python', 'NumPy · scikit-learn', 4, 2, 8.6],
-    ['SQL · MySQL', 'Schemas · Queries', 3, 2, 6.9],
-    ['React', 'Frontends at speed', 3, 2, 7.2],
-    ['Node.js', 'APIs · Realtime', 3, 1, 5.8],
-    ['PHP', 'hembit.in', 3, 1, 3.4],
-    ['MongoDB', 'Chalchitra', 3, 1, 4.6],
-    ['PyTorch', 'Models', 3, 1, 5.1],
-    ['scikit-learn', 'ML', 2, 1, 3.9],
-    ['Tailwind', 'UI', 2, 1, 2.7],
-    ['Git', 'Everything', 2, 1, 4.4],
-    ['Linux', 'Kali · Mac', 2, 1, 3.3],
-    ['Swift', 'macOS · iOS', 2, 1, 1.6],
-    ['HTML/CSS/JS', 'Since 2022', 2, 1, 3.8],
-    ['Jupyter', 'Colab · Notebooks', 3, 1, 2.9],
-    ['Google Cloud', 'Deploy · Console', 3, 1, 2.2],
-    ['Microstructure', 'Order flow · Books', 3, 1, 6.4],
-    ['Data Infra', 'Point-in-time', 3, 1, 7.6]
-  ];
-  const heat = $('#heat');
-  const tiles = skills.map(([n, sub, cw, rh, base]) => {
-    const t = document.createElement('div');
-    t.className = 'heat__t' + (cw >= 4 ? ' heat__t--xl' : cw >= 3 && rh > 1 ? ' heat__t--lg' : '');
-    t.style.gridColumn = `span ${cw}`; t.style.gridRow = `span ${rh}`;
-    t.innerHTML = `<small>${cw >= 3 ? 'SKILL' : ''}</small><b>${n}</b><span><em class="v"></em> · ${sub}</span>`;
-    heat.appendChild(t);
-    return { t, v: $('.v', t), base, cw };
+  /* ---------- beliefs: scramble the index on hover ---------- */
+  $$('.bl li').forEach(li => {
+    const n = $('.bl__n', li), orig = n.textContent;
+    li.addEventListener('pointerenter', () => scramble(n, orig, 420));
   });
-  const cols = () => getComputedStyle(heat).gridTemplateColumns.split(' ').length;
-  function fitTiles() {
-    const c = cols();
-    tiles.forEach(o => { o.t.style.gridColumn = `span ${Math.min(o.cw, c)}`; });
-  }
-  function paint(o, flash) {
-    const val = o.base + rand(-1.6, 1.2);
-    const up = val >= 0;
-    const mag = clamp(Math.abs(val) / 10, .08, 1);
-    o.t.style.setProperty('--h', up ? 145 : 0);
-    o.t.style.setProperty('--s', `${40 + mag * 35}%`);
-    o.t.style.setProperty('--l', `${9 + mag * 22}%`);
-    o.v.textContent = `${up ? '+' : ''}${val.toFixed(2)}%`;
-    if (flash) { o.t.classList.remove('flash'); void o.t.offsetWidth; o.t.classList.add('flash'); }
-  }
-  tiles.forEach(o => paint(o));
-  fitTiles(); addEventListener('resize', fitTiles);
-  setInterval(() => {
-    if (document.hidden || reduced) return;
-    for (let i = 0; i < 3; i++) paint(tiles[(Math.random() * tiles.length) | 0], true);
-  }, 1100);
 
   /* ---------- portrait halftone ---------- */
   const portrait = $('#portrait'), pimg = $('img', portrait), pfx = $('#portraitFx');
@@ -535,13 +488,12 @@
     ['INDEX', 'go · top', go('#index')],
     ['QUANTIFY', 'go · the company', go('#quantify')],
     ['FOUNDER', 'go · about', go('#founder')],
-    ['WATCHLIST', 'go · projects', go('#work')],
-    ['HEATMAP', 'go · skills', go('#stack')],
-    ['LEDGER', 'go · timeline', go('#ledger')],
+    ['BELIEFS', 'go · what I believe', go('#beliefs')],
+    ['BUILT', 'go · things I\'ve built', go('#work')],
+    ['JOURNEY', 'go · the journey', go('#ledger')],
     ['CONNECT', 'go · contact', go('#contact')],
     ['QT.COM', 'open · quantifyterminal.com', open('https://www.quantifyterminal.com')],
     ['BOOK', 'open · book a call', open('https://calendar.app.google/xxkz8n8ozpzJnkQp9')],
-    ['RESUME', 'open · résumé pdf', open('media/AaryanResume.pdf')],
     ['EMAIL', 'mail · contact@quantifyterminal.com', () => { location.href = 'mailto:contact@quantifyterminal.com'; }],
     ['GITHUB', 'open · github', open('https://github.com/aaryansaroha98')],
     ['LINKEDIN', 'open · linkedin', open('https://www.linkedin.com/in/aaryan-saroha-4301a3378/')],

@@ -332,24 +332,28 @@ a.wl__row:hover::before { transform: scaleX(1); }
 .wl__peek.is-on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 .wl__peek img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
-/* ---------- HEATMAP ---------- */
-.stack { padding: clamp(100px, 14vw, 200px) 0 0; }
-.heat {
-  margin: 0 var(--gut); display: grid; gap: 3px;
-  grid-template-columns: repeat(12, 1fr); grid-auto-rows: clamp(62px, 7vw, 100px); grid-auto-flow: dense;
+/* ---------- BELIEFS ---------- */
+.beliefs { padding: clamp(100px, 14vw, 200px) 0 0; }
+.bl { list-style: none; border-top: 1px solid var(--line-2); counter-reset: b; }
+.bl li {
+  position: relative; display: grid; grid-template-columns: clamp(60px, 9vw, 140px) 1fr; gap: 16px; align-items: start;
+  padding: clamp(22px, 3vw, 40px) var(--gut); border-bottom: 1px solid var(--line); isolation: isolate; overflow: hidden;
+  transition: color .45s var(--ease);
 }
-.heat__t {
-  position: relative; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;
-  font-family: var(--mono); color: #fff; background: hsl(var(--h) var(--s) var(--l)); transition: background .6s, transform .4s var(--ease), filter .3s;
-}
-.heat__t:hover { filter: brightness(1.25); transform: scale(.985); z-index: 2; }
-.heat__t b { font-family: var(--sans); font-weight: 800; letter-spacing: -.03em; line-height: 1; font-size: clamp(14px, 1.6vw, 26px); }
-.heat__t--xl b { font-size: clamp(24px, 3.6vw, 60px); }
-.heat__t--lg b { font-size: clamp(18px, 2.4vw, 38px); }
-.heat__t span { font-size: 11px; opacity: .85; }
-.heat__t small { font-size: 9px; letter-spacing: .12em; opacity: .6; position: absolute; top: 10px; right: 12px; }
-.heat__t.flash { animation: flash .6s; }
-@keyframes flash { 0% { box-shadow: inset 0 0 0 2px #fff } 100% { box-shadow: inset 0 0 0 2px transparent } }
+.bl li::before { content: ""; position: absolute; inset: 0; background: var(--amber); transform: translateY(101%); transition: transform .6s var(--ease); z-index: -1; }
+.bl li:hover { color: #000; }
+.bl li:hover::before { transform: none; }
+.bl__n { font-family: var(--mono); font-size: 13px; color: var(--amber); padding-top: .9em; transition: color .45s; }
+.bl li:hover .bl__n { color: #000; }
+.bl h3 { font-weight: 800; font-size: clamp(30px, 5.6vw, 92px); line-height: .95; letter-spacing: -.045em; }
+.bl h3 .serif { font-weight: 400; letter-spacing: -.02em; color: var(--amber); transition: color .45s; }
+.bl li:hover h3 .serif { color: #000; }
+.bl p { max-width: 52ch; color: var(--dim); font-size: clamp(15px, 1.2vw, 18px); max-height: 0; opacity: 0; margin-top: 0; transition: max-height .6s var(--ease), opacity .4s, margin .6s var(--ease), color .45s; }
+.bl li:hover p { max-height: 8em; opacity: 1; margin-top: 16px; color: rgba(0,0,0,.75); }
+.js .bl li.reveal { transform: translateX(-40px); }
+.js .bl li.reveal:nth-child(even) { transform: translateX(40px); }
+.js .bl li.reveal.is-in { transform: none; }
+@media (hover: none) { .bl p { max-height: none; opacity: 1; margin-top: 12px; } }
 
 /* ---------- LEDGER ---------- */
 .ledger { padding: clamp(100px, 14vw, 200px) 0 0; }
@@ -418,7 +422,6 @@ a.wl__row:hover::before { transform: scaleX(1); }
   .rules__code, .portrait { position: relative; top: 0; }
   .portrait { max-width: 480px; }
   .wl__head, .wl__row { grid-template-columns: 64px 1fr 100px; gap: 12px; }
-  .heat { grid-template-columns: repeat(6, 1fr); }
 }
 @media (max-width: 640px) {
   :root { --bar-h: 96px; }
@@ -433,7 +436,6 @@ a.wl__row:hover::before { transform: scaleX(1); }
   .wl__row .chg { font-size: 10px; }
   .lg li { grid-template-columns: 1fr; gap: 4px; }
   .term label { grid-template-columns: 1fr; gap: 4px; }
-  .heat { grid-template-columns: repeat(4, 1fr); }
   .rules__list li { grid-template-columns: 36px 1fr; }
   .wl__peek { display: none; }
 }
@@ -448,4 +450,8 @@ a.wl__row:hover::before { transform: scaleX(1); }
 @media (max-width: 400px) {
   .bar .pill { display: none; }
   .bar__row { gap: 10px; }
+}
+@media (max-width: 640px) {
+  .bl li { grid-template-columns: 1fr; gap: 6px; }
+  .bl__n { padding-top: 0; }
 }
