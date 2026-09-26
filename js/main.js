@@ -541,7 +541,7 @@
     ['CONNECT', 'go · contact', go('#contact')],
     ['QT.COM', 'open · quantifyterminal.com', open('https://www.quantifyterminal.com')],
     ['BOOK', 'open · book a call', open('https://calendar.app.google/xxkz8n8ozpzJnkQp9')],
-    ['RESUME', 'open · résumé pdf', open('public/AaryanResume.pdf')],
+    ['RESUME', 'open · résumé pdf', open('media/AaryanResume.pdf')],
     ['EMAIL', 'mail · contact@quantifyterminal.com', () => { location.href = 'mailto:contact@quantifyterminal.com'; }],
     ['GITHUB', 'open · github', open('https://github.com/aaryansaroha98')],
     ['LINKEDIN', 'open · linkedin', open('https://www.linkedin.com/in/aaryan-saroha-4301a3378/')],

@@ -8,7 +8,7 @@ index.html        all content (sections: hero, manifesto, quantify, founder, wat
 css/styles.css    design tokens live in :root (colors, fonts, gutter)
 js/main.js        boot sequence, market canvas, cursor, pipeline, heatmap, command palette
 assets/           optimised .webp images used by the page
-public/           résumé PDF + original source images
+media/            résumé PDF + original source images (not named `public/`: Vercel would serve that folder as the site root)
 ```
 
 ## Common edits
