@@ -24,7 +24,7 @@
   $$('.hero__title .row--2 .c').forEach(c => c.style.setProperty('--d', '180ms'));
 
   /* ---------- stagger siblings ---------- */
-  $$('.bl, .work__grid, .tl, .about__copy').forEach(group => {
+  $$('.bl, .shelf, .rows, .tl, .about__copy').forEach(group => {
     $$(':scope > .fade', group).forEach((el, i) => el.style.setProperty('--d', `${(i % 4) * 90}ms`));
   });
 
@@ -135,9 +135,13 @@
     requestAnimationFrame(frame);
   })();
 
+  /* ---------- demo video ---------- */
+  const demo = $('#demo'), play = $('#play'), shotFig = $('#shot');
+  play.addEventListener('click', () => { demo.controls = true; demo.play(); });
+  demo.addEventListener('play', () => shotFig.classList.add('is-playing'));
+
   /* ---------- scroll-driven effects ---------- */
   const nav = $('#nav');
-  const portraitImg = $('#heroPortrait img');
   const stage = $('#stage'), shot = $('#shot');
   const steps = $$('.step');
   const tl = $('#tl');
@@ -156,9 +160,6 @@
     const navY = nav.offsetHeight / 2;
     const overDark = darkZones.some(z => { const r = z.getBoundingClientRect(); return r.top <= navY && r.bottom >= navY; });
     nav.classList.toggle('is-dark', overDark);
-
-    // hero portrait parallax
-    if (y < vh && !reduced) portraitImg.style.transform = `translateY(${-y * .08}px)`;
 
     // statement words
     const sr = scrub.getBoundingClientRect();

@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#f3f1ec">
 <meta property="og:title" content="Aaryan Saroha — Founder, Quantify Terminal">
 <meta property="og:description" content="Building the system that maintains conviction, not just information.">
-<meta property="og:image" content="assets/qt-geo.webp">
+<meta property="og:image" content="assets/qt-demo-poster.webp">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%230e0e0e'/><text x='16' y='21.5' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='17' fill='%23f3f1ec'>a</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 </div>
 
 <!-- cursor -->
-<div class="cursor" id="cursor" aria-hidden="true"><span>View</span></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span>Open</span></div>
 
 <!-- nav -->
 <header class="nav" id="nav">
@@ -33,8 +33,8 @@
   <nav class="nav__links" aria-label="Sections">
     <a href="#about">About</a>
     <a href="#quantify">Quantify</a>
+    <a href="#writing">Writing</a>
     <a href="#beliefs">Beliefs</a>
-    <a href="#work">Work</a>
   </nav>
   <a href="#contact" class="nav__cta magnetic"><span>Get in touch</span></a>
 </header>
@@ -54,9 +54,6 @@
 
   <div class="hero__bottom">
     <p class="hero__lede fade">I'm building the financial intelligence infrastructure that tells investors <em>what changed</em> — not just what happened.</p>
-    <figure class="hero__portrait" id="heroPortrait">
-      <img src="assets/aaryan.webp" alt="Aaryan Saroha" width="900" height="931">
-    </figure>
     <div class="hero__meta fade">
       <span>Based in</span>
       <strong>Jammu, India</strong>
@@ -78,15 +75,14 @@
   <div class="about__grid">
     <div class="about__side">
       <p class="label">About</p>
-      <figure class="about__img reveal-img">
-        <img src="assets/aaryan.webp" alt="Portrait of Aaryan Saroha" width="900" height="931" loading="lazy">
-      </figure>
+      <blockquote class="about__quote fade">“Build the system that maintains <em>conviction</em>, not just information.”</blockquote>
     </div>
     <div class="about__copy">
-      <h2 class="h-lg fade">Electrical engineer by training. <em>Quant by obsession.</em> Founder by choice.</h2>
+      <h2 class="h-lg fade">Founder. Author. <em>Researcher.</em> Electrical engineer by training.</h2>
       <p class="fade">I'm Aaryan — founder and CEO of Quantify Terminal. I work where quantitative finance meets engineering: pricing and valuation, factor and risk models, market microstructure, and the data infrastructure it takes to run them at production scale.</p>
       <p class="fade">I lead architecture and product myself, from raw ingestion to what lands on the desk. The goal was never more tabs. It's a system that knows what you believe, notices the moment the world breaks it, and shows its working.</p>
-      <p class="fade">I'm building it as long-term financial infrastructure — from Jammu, for every desk that takes its decisions seriously.</p>
+      <p class="fade">Outside the company I write. I've published two books — <em>Career Confusion Is Normal</em> and <em>The Delusional</em> — and a research paper on why bigger goals can make smaller ones more likely: the Aspirational Scale Effect.</p>
+      <p class="fade">I'm building Quantify as long-term financial infrastructure — from Jammu, for every desk that takes its decisions seriously.</p>
       <div class="about__focus fade">
         <span>Quantitative research</span><span>Risk &amp; portfolio analytics</span><span>Market microstructure</span><span>Algorithmic execution</span><span>Market data infrastructure</span><span>Decision infrastructure</span>
       </div>
@@ -102,10 +98,16 @@
     <p class="qt__sub fade">Financial intelligence infrastructure. One desktop terminal for live markets, research, portfolios, risk, derivatives, funds, macro and geopolitics — built on a single event-to-decision system.</p>
   </div>
 
+  <p class="qt__cap fade">The product in three minutes — one night of filings, prices and news read against a book, and the brief the desk opens to at 06:41.</p>
+
   <div class="qt__stage" id="stage">
     <div class="qt__stage-sticky">
       <figure class="qt__shot" id="shot">
-        <img src="assets/qt-geo.webp" alt="Quantify Terminal — Global Intelligence Map" width="1400" height="808" loading="lazy">
+        <video id="demo" preload="none" playsinline width="1920" height="1080" poster="assets/qt-demo-poster.webp">
+          <source src="https://www.quantifyterminal.com/Public/video/quantify-terminal-overnight-demo.mp4?v=1" type="video/mp4">
+          <a href="https://www.quantifyterminal.com/product">Watch the demo on quantifyterminal.com</a>
+        </video>
+        <button class="qt__play" id="play" type="button" aria-label="Play the three-minute demo"><span>▶</span><b>Watch the demo</b><small>3 min</small></button>
       </figure>
     </div>
   </div>
@@ -123,12 +125,6 @@
       <li class="step"><span class="step__n">04</span><div><h4>Exposure is recomputed</h4><p>The Portfolio Digital Twin traces first-, second- and third-order exposure through suppliers, customers and geographies.</p></div></li>
       <li class="step"><span class="step__n">05</span><div><h4>The decision is recorded</h4><p>Tested against the mandate, approved by a person, written to the Decision Ledger — and replayable forever.</p></div></li>
     </ol>
-  </div>
-
-  <div class="qt__gallery">
-    <figure class="reveal-img"><img src="assets/qt-charts.webp" alt="Quantify Terminal — charts" width="1400" height="808" loading="lazy"></figure>
-    <figure class="reveal-img"><img src="assets/qt-research.webp" alt="Quantify Terminal — equity research" width="1400" height="808" loading="lazy"></figure>
-    <figure class="reveal-img"><img src="assets/qt-options.webp" alt="Quantify Terminal — options analytics" width="1400" height="812" loading="lazy"></figure>
   </div>
 
   <a class="qt__link" href="https://www.quantifyterminal.com" target="_blank" rel="noopener">
@@ -161,34 +157,59 @@
   </ol>
 </section>
 
+<!-- ================= WRITING ================= -->
+<section class="writing" id="writing">
+  <div class="sec-top">
+    <p class="label">Writing &amp; research</p>
+    <p class="sec-top__note fade">Published work, by Aaryan Saroha.</p>
+  </div>
+  <div class="shelf">
+    <a class="book fade" href="https://www.amazon.in/s?k=Career+Confusion+Is+Normal+Aaryan+Saroha" target="_blank" rel="noopener" data-cursor>
+      <div class="book__cover book__cover--a">
+        <span class="book__kind">A book</span>
+        <h3>Career Confusion <em>Is Normal</em></h3>
+        <span class="book__by">Aaryan Saroha</span>
+      </div>
+      <div class="book__meta"><b>Career Confusion Is Normal</b><span>Book</span></div>
+    </a>
+    <a class="book fade" href="https://www.amazon.in/s?k=The+Delusional+Aaryan+Saroha" target="_blank" rel="noopener" data-cursor>
+      <div class="book__cover book__cover--b">
+        <span class="book__kind">A book</span>
+        <h3>The <em>Delusional</em></h3>
+        <span class="book__by">Aaryan Saroha</span>
+      </div>
+      <div class="book__meta"><b>The Delusional</b><span>Book</span></div>
+    </a>
+    <a class="book fade" href="https://zenodo.org/records/21887167" target="_blank" rel="noopener" data-cursor>
+      <div class="book__cover book__cover--c">
+        <span class="book__kind">Research paper · 2026</span>
+        <h3>The Aspirational <em>Scale Effect</em></h3>
+        <span class="book__by">Aaryan Saroha · IIT Jammu</span>
+      </div>
+      <div class="book__meta"><b>The Aspirational Scale Effect</b><span>Paper · Zenodo</span></div>
+    </a>
+  </div>
+  <p class="paper fade">A theory of how larger goals can raise the probability of reaching lower thresholds — a conditional inverted-U, a formal model with an <em>Aspirational Lift Ratio</em>, and six testable hypotheses.</p>
+</section>
+
 <!-- ================= WORK ================= -->
 <section class="work" id="work">
   <div class="sec-top">
     <p class="label">Selected work</p>
-    <p class="sec-top__note fade">One company. A few products that got me here.</p>
+    <p class="sec-top__note fade">One company, and the products that got me here.</p>
   </div>
-
-  <div class="work__grid">
-    <a class="card card--xl fade" href="https://www.quantifyterminal.com" target="_blank" rel="noopener" data-cursor>
-      <figure class="card__img"><img src="assets/qt-charts.webp" alt="" width="1400" height="808" loading="lazy"></figure>
-      <div class="card__meta"><h3>Quantify Terminal</h3><span>Founder &amp; CEO · Now</span></div>
-      <p class="card__desc">Financial intelligence infrastructure for analysts, funds and portfolio managers.</p>
+  <div class="rows">
+    <a class="rowlink fade" href="https://www.quantifyterminal.com" target="_blank" rel="noopener">
+      <span class="rowlink__k">Company</span>
+      <h3>Quantify Terminal</h3>
+      <span class="rowlink__d">Founder &amp; CEO · Now</span>
+      <i aria-hidden="true">↗</i>
     </a>
-    <a class="card fade" href="https://hembit.in" target="_blank" rel="noopener" data-cursor>
-      <figure class="card__img"><img src="assets/hembit.webp" alt="" width="1400" height="712" loading="lazy"></figure>
-      <div class="card__meta"><h3>hembit.in</h3><span>2025</span></div>
-      <p class="card__desc">A full e-commerce business, built end to end.</p>
-    </a>
-    <a class="card fade" href="https://chalchitraseries.iitjammu.ac.in" target="_blank" rel="noopener" data-cursor>
-      <figure class="card__img"><img src="assets/chalchitra.webp" alt="" width="1400" height="838" loading="lazy"></figure>
-      <div class="card__meta"><h3>Chalchitra</h3><span>2026</span></div>
-      <p class="card__desc">Ticketing for IIT Jammu's film society. Real students, real seats.</p>
-    </a>
-    <a class="card fade" href="https://aaryansaroha98.github.io/prepaxis/" target="_blank" rel="noopener" data-cursor>
-      <figure class="card__img"><img src="assets/prepaxis.webp" alt="" width="1400" height="773" loading="lazy"></figure>
-      <div class="card__meta"><h3>PrepAxis</h3><span>2025</span></div>
-      <p class="card__desc">An interactive platform for learning and skill development.</p>
-    </a>
+    <div class="rowlink rowlink--group fade">
+      <span class="rowlink__k">Earlier products</span>
+      <h3 class="rowlink__list"><a href="https://hembit.in" target="_blank" rel="noopener">hembit.in</a>, <a href="https://chalchitraseries.iitjammu.ac.in" target="_blank" rel="noopener">Chalchitra</a>, <a href="https://aaryansaroha98.github.io/prepaxis/" target="_blank" rel="noopener">PrepAxis</a></h3>
+      <span class="rowlink__d">E-commerce, campus ticketing, learning · 2025–26</span>
+    </div>
   </div>
 </section>
 
@@ -201,8 +222,8 @@
   <ol class="tl" id="tl">
     <li class="fade"><time>2022</time><h4>First line of code</h4><p>Started building for the web. Haven't stopped since.</p></li>
     <li class="fade"><time>2025</time><h4>Jammu</h4><p>Electrical engineering at IIT Jammu — and the base Quantify is built from.</p></li>
-    <li class="fade"><time>Nov 2025</time><h4>hembit.in ships</h4><p>A full e-commerce business, live in production.</p></li>
-    <li class="fade"><time>Jan 2026</time><h4>Chalchitra goes live</h4><p>Ticketing for the campus film society. I run the backend.</p></li>
+    <li class="fade"><time>2025–26</time><h4>First products ship</h4><p>hembit.in, Chalchitra and PrepAxis — live, with real users.</p></li>
+    <li class="fade"><time>2026</time><h4>Books &amp; research</h4><p>Two books published, and the Aspirational Scale Effect paper.</p></li>
     <li class="fade tl__now"><time>Now</time><h4>Quantify Terminal</h4><p>Early access is open to a small number of analysts and funds.</p></li>
   </ol>
 </section>
